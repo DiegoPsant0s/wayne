@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Servidor",
+    "description": "Servidor principal",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "name": "Banco de Dados",
+    "description": "Banco de dados seguro",
+    "status": "maintenance"
+  },
+  {
+    "id": 3,
+    "name": "Batmóvel",
+    "description": "veículo",
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "name": "Drone de patrulha",
+    "description": "equipamento",
+    "status": "maintenance"
+  },
+  {
+    "id": 5,
+    "name": "Sensor de movimento",
+    "description": "dispositivo",
+    "status": "inactive"
+  },
+  {
+    "name": "gancho",
+    "status": "active",
+    "type": "pistola",
+    "description": "pistola de gancho",
+    "id": 6
+  },
+  {
+    "name": "batcinto",
+    "status": "active",
+    "type": "",
+    "description": "cinto do batman",
+    "id": 7
+  }
+]

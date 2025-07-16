@@ -1,0 +1,366 @@
+/* Animações para o Dashboard */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.notification-toast {
+  animation: slideInRight 0.3s ease;
+}
+
+.notification-toast:hover {
+  transform: scale(1.02);
+}
+
+.network-status-offline {
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 26, 26, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 26, 26, 0.8);
+  }
+}
+
+/* Estilos para cards e componentes */
+.dashboard-card {
+  animation: fadeIn 0.5s ease;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.admin-section {
+  animation: glow 3s infinite;
+}
+
+.metric-card {
+  transition: all 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: scale(1.02);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff1a1a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px !important;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  .performance-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Estados de loading */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Temas */
+.theme-dark {
+  --primary-color: #ff1a1a;
+  --secondary-color: #00eaff;
+  --accent-color: #8f00ff;
+  --background-color: #0f0f0f;
+  --card-background: #1a1a2e;
+  --text-color: #ffffff;
+  --border-color: #333;
+}
+
+.theme-light {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --background-color: #f8f9fa;
+  --card-background: #ffffff;
+  --text-color: #333333;
+  --border-color: #ddd;
+}
+
+/* Indicadores de status */
+.status-indicator {
+  position: relative;
+  display: inline-block;
+}
+
+.status-indicator::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 50%;
+  left: -16px;
+  transform: translateY(-50%);
+}
+
+.status-online::before {
+  background: #00C851;
+  animation: pulse 2s infinite;
+}
+
+.status-offline::before {
+  background: #ff4444;
+  animation: pulse 2s infinite;
+}
+
+.status-maintenance::before {
+  background: #ffbb33;
+  animation: pulse 2s infinite;
+}
+
+/* Tooltips */
+.tooltip {
+  position: relative;
+  cursor: help;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Navegação aprimorada */
+.nav-item {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-color);
+  animation: slideInLeft 0.3s ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Melhorias de acessibilidade */
+.focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.screen-reader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Estados de erro */
+.error-state {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid #ff4444;
+  border-radius: 4px;
+  padding: 12px;
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Otimizações de performance */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.gpu-acceleration {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Animações para ResourceManager */
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 26, 26, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 26, 26, 0.6);
+  }
+}
+
+/* Classes para o ResourceManager */
+.resource-card {
+  animation: slideInUp 0.3s ease forwards;
+}
+
+.resource-card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.resource-card:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.resource-stats {
+  animation: scaleIn 0.4s ease forwards;
+}
+
+.bulk-toolbar {
+  animation: slideInUp 0.3s ease forwards;
+}
+
+.selected-resource {
+  animation: glowPulse 2s infinite;
+}
+
+/* Responsividade para ResourceManager */
+@media (max-width: 768px) {
+  .resource-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .resource-filters {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .bulk-actions {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+}

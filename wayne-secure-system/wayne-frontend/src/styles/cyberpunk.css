@@ -1,0 +1,403 @@
+/* Cyberpunk Resource Manager */
+/* Responsividade geral */
+.resource-manager {
+  background: rgba(20, 20, 30, 0.97);
+  border-radius: 18px;
+  box-shadow: 0 0 40px 10px #00fff7, 0 0 12px 3px #ff0055;
+  padding: 32px 24px;
+  max-width: 1100px;
+  margin: 40px auto;
+  border: 2.5px solid #ff0055;
+  color: #e0e0e0;
+}
+
+@media (max-width: 900px) {
+  .resource-manager {
+    padding: 16px 6px;
+    max-width: 98vw;
+    margin: 16px auto;
+  }
+  .resources-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .resource-manager {
+    padding: 8px 2px;
+    border-radius: 8px;
+  }
+  .resource-header h1 {
+    font-size: 1.2rem;
+  }
+  .add-resource-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+.resource-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.resource-header h1 {
+  font-size: 2.2rem;
+  color: #00fff7;
+  text-shadow: 0 0 8px #00fff7, 0 0 2px #ff0055;
+  font-family: 'Orbitron', 'Roboto', 'Arial', sans-serif;
+  letter-spacing: 2px;
+}
+.add-resource-btn {
+  background: linear-gradient(90deg, #ff0055 0%, #00fff7 100%);
+  color: #181828;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00fff7, 0 0 4px #ff0055;
+  transition: background 0.2s, color 0.2s;
+}
+.add-resource-btn:hover {
+  background: linear-gradient(90deg, #00fff7 0%, #ff0055 100%);
+  color: #fff;
+}
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.resource-card {
+  background: linear-gradient(135deg, #181828 60%, #302b63 100%);
+  border-radius: 14px;
+  box-shadow: 0 0 18px #00fff7, 0 0 6px #ff0055;
+  border: 2px solid #ff0055;
+  padding: 24px 18px;
+  color: #e0e0e0;
+  font-family: 'Orbitron', 'Roboto', 'Arial', sans-serif;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+.resource-card h3 {
+  color: #00fff7;
+  text-shadow: 0 0 6px #00fff7;
+  margin-bottom: 12px;
+}
+.resource-card:hover {
+  box-shadow: 0 0 32px #00fff7, 0 0 12px #ff0055;
+  border: 2.5px solid #00fff7;
+}
+.status-badge.active {
+  background: #00fff7;
+  color: #181828;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-weight: bold;
+  box-shadow: 0 0 8px #00fff7;
+}
+.status-badge.inactive {
+  background: #ff0055;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-weight: bold;
+  box-shadow: 0 0 8px #ff0055;
+}
+.resource-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+.status-toggle.active {
+  background: linear-gradient(90deg, #00fff7 0%, #ff0055 100%);
+  color: #181828;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00fff7;
+}
+.status-toggle.inactive {
+  background: linear-gradient(90deg, #ff0055 0%, #00fff7 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 8px #ff0055;
+}
+.delete-btn {
+  background: #ff0055;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 8px #ff0055;
+  transition: background 0.2s;
+}
+.delete-btn:hover {
+  background: #181828;
+  color: #ff0055;
+}
+.empty-state {
+  background: #181828cc;
+  color: #ff0055;
+  border-radius: 8px;
+  padding: 18px 24px;
+  margin-top: 24px;
+  font-size: 1.1rem;
+  box-shadow: 0 0 8px #ff0055;
+  text-align: center;
+}
+/* Cyberpunk Dashboard */
+.dashboard {
+  background: rgba(20, 20, 30, 0.97);
+  border-radius: 18px;
+  box-shadow: 0 0 40px 10px #00fff7, 0 0 12px 3px #ff0055;
+  padding: 32px 24px;
+  max-width: 1100px;
+  margin: 40px auto;
+  border: 2.5px solid #00fff7;
+  color: #e0e0e0;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #00fff7;
+  text-shadow: 0 0 12px #00fff7, 0 0 4px #ff0055;
+  font-family: 'Orbitron', 'Roboto', 'Arial', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.dashboard-header p {
+  color: #ff0055;
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  text-shadow: 0 0 6px #ff0055;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: linear-gradient(135deg, #181828 60%, #302b63 100%);
+  border-radius: 14px;
+  box-shadow: 0 0 18px #00fff7, 0 0 6px #ff0055;
+  border: 2px solid #ff0055;
+  padding: 24px 18px;
+  color: #e0e0e0;
+  font-family: 'Orbitron', 'Roboto', 'Arial', sans-serif;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+.card h3 {
+  color: #00fff7;
+  text-shadow: 0 0 6px #00fff7;
+  margin-bottom: 12px;
+}
+.card:hover {
+  box-shadow: 0 0 32px #00fff7, 0 0 12px #ff0055;
+  border: 2.5px solid #00fff7;
+}
+
+/* Alertas Cyberpunk */
+.alerts-list-cyberpunk {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 18px;
+}
+.alert-card-cyberpunk {
+  background: #181828;
+  border: 2px solid #00fff7;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #00fff7, 0 0 4px #ff0055 inset;
+  padding: 18px;
+  transition: box-shadow 0.2s;
+}
+.alert-card-cyberpunk:hover {
+  box-shadow: 0 0 24px #ff0055, 0 0 8px #00fff7 inset;
+}
+.alert-level-cyberpunk {
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-right: 12px;
+  background: linear-gradient(90deg, #ff0055 0%, #00fff7 100%);
+  color: #181828;
+  box-shadow: 0 0 6px #00fff7;
+}
+.alert-empty {
+  color: #ff0055;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.system-status {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+.status-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00fff7;
+  margin-right: 6px;
+}
+.status-indicator.online {
+  background: #00fff7;
+}
+.status-indicator.secure {
+  background: #ff0055;
+}
+.status-indicator.monitored {
+  background: #ffd700;
+}
+/* Cyberpunk Batman Beyond Theme */
+body {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: #e0e0e0;
+  font-family: 'Orbitron', 'Roboto', 'Arial', sans-serif;
+}
+
+.login-container {
+  background: rgba(20, 20, 30, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 0 32px 8px #00fff7, 0 0 8px 2px #ff0055;
+  padding: 40px 32px;
+  max-width: 400px;
+  margin: 60px auto;
+  border: 2px solid #ff0055;
+  position: relative;
+}
+
+.system-title {
+  font-size: 2.2rem;
+  color: #00fff7;
+  text-shadow: 0 0 8px #00fff7, 0 0 2px #ff0055;
+  font-family: 'Orbitron', 'Roboto', 'Arial', sans-serif;
+  letter-spacing: 2px;
+}
+
+.system-subtitle {
+  color: #ff0055;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  text-shadow: 0 0 4px #ff0055;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group label {
+  color: #00fff7;
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-shadow: 0 0 2px #00fff7;
+}
+
+.form-group input {
+  background: #181828;
+  border: 1.5px solid #ff0055;
+  color: #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #00fff733;
+}
+.form-group input:focus {
+  border: 2px solid #00fff7;
+  box-shadow: 0 0 12px #00fff7;
+  outline: none;
+}
+
+.login-button {
+  background: linear-gradient(90deg, #ff0055 0%, #00fff7 100%);
+  color: #181828;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00fff7, 0 0 4px #ff0055;
+  transition: background 0.2s, color 0.2s;
+}
+.login-button:hover {
+  background: linear-gradient(90deg, #00fff7 0%, #ff0055 100%);
+  color: #fff;
+}
+
+.error-message {
+  background: #ff0055cc;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 8px #ff0055;
+  font-weight: bold;
+}
+
+.demo-credentials {
+  background: #181828cc;
+  color: #00fff7;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-top: 18px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 8px #00fff7;
+}
+
+/* Batman Beyond logo overlay */
+
+.login-logo {
+  display: block;
+  margin: 0 auto 12px auto;
+  width: 72px;
+  height: 72px;
+  background: url('../assets/batman-beyond.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.92;
+  filter: drop-shadow(0 0 12px #ff0055);
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 16px 4px 16px 4px;
+    max-width: 98vw;
+    margin: 32px auto 12px auto;
+  }
+  .system-title {
+    font-size: 1.2rem;
+  }
+  .login-logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+  }
+}
